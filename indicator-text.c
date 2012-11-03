@@ -1,3 +1,7 @@
+/*
+ * Author: Michael Egli <eglimi@gmail.com>
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <glib.h>
@@ -20,12 +24,19 @@ gboolean input_handler(GIOChannel* source, GIOCondition condition, gpointer data
 	char *b;
 	gsize term = 0;
 
-	g_io_channel_read_line( source, &b, NULL, &term, NULL );
-	if(b == NULL) 
+	GIOStatus status;
+	do
+	{
+		status = g_io_channel_read_line( source, &b, NULL, &term, &error );
+	} while (status == G_IO_STATUS_AGAIN);
+
+	if(status == G_IO_STATUS_ERROR) 
 	{ 
 		g_error("Could not read any data: %s\n", error->message);
+		return TRUE;
 	}
-	else
+	
+	if(b != NULL)
 	{
 		b[term] = '\0'; // truncate line terminator
 		app_indicator_set_label(indicator, b, NULL);
