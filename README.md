@@ -41,7 +41,7 @@ fit into the desktop aesthetically. This is why I wrote this indicator.
 Ubuntu uses `.desktop` files to manage autostart. You may use the one provided
 with the sources.
 
-	$ cp ./indicator-text /usr/local/bin
+	$ sudo cp ./indicator-text /usr/local/bin
 	$ cp ./indicator-text.desktop $HOME/.config/autostart
 
 ### Ubuntu Package
