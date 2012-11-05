@@ -53,8 +53,8 @@ somebody is interested. Just write a feature request.
 
 Currently, `indicator-text` supports the following input.
 
-* `stdin`
-* UDP messages on port 3434 (address is configurable)
+* stdin
+* UDP messages on port 3434
 
 More channels could be easily added if somebody is interested. Again, write a
 feature request.
@@ -86,7 +86,7 @@ Using this technique, there can be several programs sending text to the panel.
 The general pattern is to start `indicator-text`, and sending text from other
 sources independently.
 
-	$ ./indicator-text
+	$ ./indicator-text -u
 	$ echo "hello panel, it's me!" | socat - UDP:localhost:3434
 
 One can simply start `socat` as shown above and start typing. This mimics the
@@ -125,7 +125,7 @@ Start it with either
 
 Or using UDP
 
-	$ ./indicator-text
+	$ ./indicator-text -u
 	$ conky | socat - UDP:localhost:3434
 
 In order to autostart `conky` and `indicator-text`, you can create a script
