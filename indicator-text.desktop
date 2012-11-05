@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/indicator-text
+Icon=
+Categories=
+Hidden=false
+NoDisplay=false
+Terminal=false
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel
+X-KDE-StartupNotify=false
+Name[en_US]=indicator-text
+Name=indicator-text
+Comment[en_US]=an indicator showing arbitrary text.
+Comment=an indicator showing arbitrary text.
