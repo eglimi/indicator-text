@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/local/bin/indicator-text
+Exec=/usr/local/bin/indicator-text -u
 Icon=
 Categories=
 Hidden=false

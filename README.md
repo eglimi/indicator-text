@@ -34,6 +34,15 @@ fit into the desktop aesthetically. This is why I wrote this indicator.
 	$ git clone https://github.com/eglimi/indicator-text.git
 	$ cd indicator-text
 	$ make
+	$ ./indicator-text
+
+### Autostart
+
+Ubuntu uses `.desktop` files to manage autostart. You may use the one provided
+with the sources.
+
+	$ cp ./indicator-text /usr/local/bin
+	$ cp ./indicator-text.desktop $HOME/.config/autostart
 
 ### Ubuntu Package
 
@@ -119,6 +128,15 @@ Or using UDP
 	$ ./indicator-text
 	$ conky | socat - UDP:localhost:3434
 
+In order to autostart `conky` and `indicator-text`, you can create a script
+with the following content and adjust `indicator-text.desktop` to reference
+this script. Or alternatively, again, start conky and indicator-text separately
+and use UDP.
+
+	#!/bin/sh
+	/usr/bin/conky | /usr/local/bin/indicator-text
+
+
 ### Fortune cookies
 
 There are several fortune cookies available on your system. See a list an
@@ -135,5 +153,5 @@ have only one line).
 
 ## License
 
-This program is distributed under the terms of the MIT license. See [LICENSE
-file](https://github.com/eglimi/indicator-text/raw/master/LICENSE)
+This program is distributed under the terms of the MIT license. See
+[LICENSE](https://github.com/eglimi/indicator-text/raw/master/LICENSE) file.
