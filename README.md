@@ -42,7 +42,7 @@ Ubuntu uses `.desktop` files to manage autostart. You may use the one provided
 with the sources.
 
 	$ sudo cp ./indicator-text /usr/local/bin
-	$ cp ./indicator-text.desktop $HOME/.config/autostart
+	$ cp ./indicator-text.desktop $HOME/.config/autostart/
 
 ### Ubuntu Package
 
